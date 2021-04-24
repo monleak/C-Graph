@@ -54,6 +54,10 @@ VD: cgraph_ivec_push_back(&edges, (CGRAPH_INTEGER)A[i].ID)
 CGRAPH_INTEGER *a  //mảng chứa giá trị
 CGRAPH_INTEGER n  //số phần từ trong mảng
 ```
+#### Lệnh in vector
+`int cgraph_ivec_print(cgraph_ivec_t const v);`
+#### Lệnh giải phóng vector
+`int cgraph_ivec_free(cgraph_ivec_t *v);`
 #### Lệnh thêm cạnh vào danh sách vector
 `int cgraph_add_edges(cgraph_t *graph, cgraph_ivec_t const edges)`
 ```
@@ -65,3 +69,5 @@ cgraph_ivec_t const edges  //các cạnh muốn thêm
 ```
 cgraph_t *graph  //truyền vào địa chỉ biến đồ thị
 ```
+#### Kiểm tra đồ thị có hướng hay vô hướng
+`bool cgraph_is_directed(const cgraph_t *graph);`
