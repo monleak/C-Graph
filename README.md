@@ -71,3 +71,17 @@ cgraph_t *graph  //truyền vào địa chỉ biến đồ thị
 ```
 #### Kiểm tra đồ thị có hướng hay vô hướng
 `bool cgraph_is_directed(const cgraph_t *graph);`
+#### Cấu trúc của 1 biến đồ thị
+```
+typedef struct cgraph_s {
+    CGRAPH_INTEGER n;    //số lượng đỉnh
+    bool directed;     // có hướng hay không (true/false)
+    cgraph_ivec_t from;  //cột đầu tiên của danh sách cạnh
+    cgraph_ivec_t to;    //cột thứ 2 của danh sách cạnh
+    cgraph_ivec_t oi;
+    cgraph_ivec_t ii;
+    cgraph_ivec_t os;
+    cgraph_ivec_t is;
+    void *attr;
+} cgraph_t;
+```
