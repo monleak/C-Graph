@@ -13,3 +13,15 @@ const CGRAPH_INTEGER node   // đỉnh cần xác định bậc vào/ra
 cgraph_neimode_t mode   // chế độ vào/ra (CGRAPH_OUT/CGRAPH_IN)
 bool loops   // đồ thị có hướng hay không (true/false)
 ```
+
+#### Lệnh in các đỉnh đi vào/đi ra của đỉnh
+`int cgraph_neighbors(const cgraph_t *graph,
+                     cgraph_ivec_t* neis,
+                     CGRAPH_INTEGER vid,
+                     cgraph_neimode_t mode);`
+```
+const cgraph_t *graph   // địa chỉ của biến cgraph (cgraph_t B => truyền vào &B)
+cgraph_ivec_t* neis   // mảng nhận giá trị của nhứng người hàng xóm
+CGRAPH_INTEGER vid   // đỉnh cần xác định
+cgraph_neimode_t mode  // chế độ vào/ra (CGRAPH_OUT/CGRAPH_IN)
+```
