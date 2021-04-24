@@ -47,3 +47,10 @@ Lệnh này để khởi tạo danh sách cạnh của đồ thị
 ```
 VD: cgraph_ivec_push_back(&edges, (CGRAPH_INTEGER)A[i].ID)
 ```
+#### Lệnh thêm đỉnh vào danh sách vector từ 1 mảng
+`cgraph_ivec_t cgraph_ivec_from_array(CGRAPH_INTEGER *a,
+                                    CGRAPH_INTEGER n);`
+```
+CGRAPH_INTEGER *a  //mảng chứa giá trị
+CGRAPH_INTEGER n  //số phần từ trong mảng
+```
