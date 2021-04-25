@@ -79,10 +79,30 @@ typedef struct cgraph_s {
     bool directed;     // có hướng hay không (true/false)
     cgraph_ivec_t from;  //cột đầu tiên của danh sách cạnh
     cgraph_ivec_t to;    //cột thứ 2 của danh sách cạnh
-    cgraph_ivec_t oi;
-    cgraph_ivec_t ii;
+    cgraph_ivec_t oi;    //chỉ số của cạnh theo cột thứ nhất
+    cgraph_ivec_t ii;   //chỉ só của cạnh theo cột thứ 2
     cgraph_ivec_t os;
     cgraph_ivec_t is;
     void *attr;
 } cgraph_t;
+//Giải thích: Có 1 danh sách cạnh
+    0, 1,
+    0, 3,
+    1, 2,
+    1, 3,
+    2, 4,
+    0, 2,
+    3, 5,
+    3, 1,
+    1, 4
+Ta có:
+n = 6
+directed = true
+from  = {0, 0, 1, 1, 2, 0, 3, 3, 1}
+to    = {1, 3, 2, 3, 4, 2, 5, 1, 4}
+chỉ số   0  1  2  3  4  5  6  7  8    //chỉ số cạnh này sẽ dùng ở oi và ii
+oi    = {0, 5, 1, 2, 3, 8, 4, 7, 6}   //sắp xếp theo đầu ra lần lươt từ đỉnh 0->5
+ii    = {0, 7, 5, 2, 1, 3, 8, 4, 6}   //sắp xếp theo đầu vào lần lươt từ đỉnh 0->5
+os    = {0, 3, 6, 7, 9, 9, 9}      //VD bậc ra của đỉnh i bằng os[i+1]-os[i]
+is    = {0, 0, 2, 4, 6, 8, 9}      // bậc vào của đỉnh i bằng is[i+1]-is[i]
 ```
