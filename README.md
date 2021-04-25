@@ -1,4 +1,5 @@
 # Thư viện C-Graph
+Đây là chức năng và ý nghĩa của các biến truyền vào. Để hiểu rõ cách dùng có thể xem Demo-cgraph
 
 #### Lệnh in ra bậc vào ra của đỉnh
 `int cgraph_degree_one(const cgraph_t *graph,
